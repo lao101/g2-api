@@ -3,40 +3,12 @@ const router = express.Router()
 module.exports = router
 
 
-// Student.js
-// router.get('/', async (req, res)=>{
-//     let db = req.db
-//     let rows
-//     if (req.query.class) {
-//       rows = await db('student').where('class', '=', req.query.class).orderBy('fname');
-//     } else {
-//       rows = await db('student').orderBy('fname');
-//     }
-//     res.send({
-//       status: true,
-//       student: rows
-//     })
-// })
-
-// router.get('/', async (req, res)=>{
-//     let db = req.db
-//     let rows
-//     if (req.query.id)
-//         rows = await db('teacher').where({'id': req.query.id})
-//     else
-//         rows = await db('teacher')
-//     res.send({
-//         status: true,
-//         teachers: rows
-//     })
-// })
-
 router.get('/', async (req, res)=>{
     let db = req.db
-    let rows = await db('teacher')
+    let rows = await db('classrooms')
     res.send({
         status: true,
-        teachers: rows
+        classrooms: rows
     })
 })
 

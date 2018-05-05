@@ -6,5 +6,6 @@ module.exports = router
 router.use('/auth', require('./auth'))
 router.use('/teacher', require('./teacher'))
 router.use('/student', require('./student'))
-router.use('/group', require('./igroup'))
+router.use('/classroom', require('./classroom'))
 router.use('/subject', require('./subject'))
+router.use('/mark', require('./mark'))

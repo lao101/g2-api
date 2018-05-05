@@ -2,11 +2,16 @@ const express = require('express')
 const router = express.Router()
 module.exports = router
 
+
 router.get('/', async (req, res)=>{
     let db = req.db
-    let rows = await db('subjects')
+    let rows = await db('mark')
     res.send({
         status: true,
-        subjects: rows
+        marks: rows
     })
+})
+
+router.post('/add', async (req, res)=>{
+    let db = req.db
 })

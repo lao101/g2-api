@@ -52,7 +52,6 @@ router.post('/add', async (req, res)=>{
     }).catch(e => res.send({status: false, error: e.message}))
 })
 
-
 // /api/teacher/save/id
 router.post('/save/:id', async (req, res) => {
     let db = req.db
@@ -64,15 +63,6 @@ router.post('/save/:id', async (req, res) => {
         res.send({status: true})
     }).catch(e => res.send({status: false, error: e.message}))
 })
-// router.post('/save', async (req, res) => {
-//     let db = req.db
-//     await db('teacher').where({id: req.params.id}).update({
-//         fname: req.body.fname,
-//         lname: req.body.lname,
-//     }).then(()=>{
-//         res.send({status: true})
-//     }).catch(e => res.send({status: false, error: e.message}))
-// })
 
 router.delete('/delete/:id', async (req, res)=> {
     await req.db('teacher').where({id: req.params.id}).delete().then(() =>{

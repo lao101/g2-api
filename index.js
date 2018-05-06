@@ -2,7 +2,10 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const config = require('./config')
 
+//1. 
 // const session = require('express-session')
+
+//2. หากมี mongo
 // const MongoDBStore = require('connect-mongodb-session')(session)
 
 // const store = new MongoDBStore({
@@ -32,8 +35,8 @@ app.use(bodyParser.json())
 
 // app.set('trust proxy', 1) // trust first proxy
 // app.use(session({
-//   secret: 'eec!secret',
-//   store,
+//   secret: 'eec!secret',  //รหัสที่ตั้งขึ้นเพื่อให้เข้ารหัส
+//   store,                 //หากไม่มี mongo ก็ comment ไว้
 //   cookie: {
 //     maxAge: 15 * 60 * 1000, // 15min
 //     // secure: true,
